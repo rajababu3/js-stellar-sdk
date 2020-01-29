@@ -1,14 +1,14 @@
 import { Horizon } from "./horizon_api";
 export declare class NetworkError extends Error {
-    public response: {
+    response: {
         data?: Horizon.ErrorResponseData;
         status?: number;
         statusText?: string;
         url?: string;
     };
-    public __proto__: NetworkError;
+    __proto__: NetworkError;
     constructor(message: string, response: any);
-    public getResponse(): {
+    getResponse(): {
         data?: Horizon.ErrorResponseData.RateLimitExceeded | Horizon.ErrorResponseData.InternalServerError | Horizon.ErrorResponseData.TransactionFailed | undefined;
         status?: number | undefined;
         statusText?: string | undefined;
@@ -25,6 +25,6 @@ export declare class BadResponseError extends NetworkError {
     constructor(message: string, response: any);
 }
 export declare class InvalidSep10ChallengeError extends Error {
-    public __proto__: InvalidSep10ChallengeError;
+    __proto__: InvalidSep10ChallengeError;
     constructor(message: string);
 }

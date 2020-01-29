@@ -3,13 +3,13 @@ export declare class FederationServer {
     private readonly serverURL;
     private readonly domain;
     private readonly timeout;
-    private _sendRequest;
-    public static resolve(value: string, opts?: FederationServer.Options): Promise<FederationServer.Record>;
-    public static createForDomain(domain: string, opts?: FederationServer.Options): Promise<FederationServer>;
+    static resolve(value: string, opts?: FederationServer.Options): Promise<FederationServer.Record>;
+    static createForDomain(domain: string, opts?: FederationServer.Options): Promise<FederationServer>;
     constructor(serverURL: string, domain: string, opts?: FederationServer.Options);
-    public resolveAddress(address: string): Promise<FederationServer.Record>;
-    public resolveAccountId(accountId: string): Promise<FederationServer.Record>;
-    public resolveTransactionId(transactionId: string): Promise<FederationServer.Record>;
+    resolveAddress(address: string): Promise<FederationServer.Record>;
+    resolveAccountId(accountId: string): Promise<FederationServer.Record>;
+    resolveTransactionId(transactionId: string): Promise<FederationServer.Record>;
+    private _sendRequest;
 }
 export declare namespace FederationServer {
     interface Record {

@@ -1,8 +1,8 @@
 declare class Config {
-    public static setAllowHttp(value: boolean): void;
-    public static setTimeout(value: number): void;
-    public static isAllowHttp(): boolean;
-    public static getTimeout(): number;
-    public static setDefault(): void;
+    static setAllowHttp(value: boolean): void;
+    static setTimeout(value: number): void;
+    static isAllowHttp(): boolean;
+    static getTimeout(): number;
+    static setDefault(): void;
 }
 export { Config };

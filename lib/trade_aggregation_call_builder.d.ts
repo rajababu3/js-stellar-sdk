@@ -4,9 +4,9 @@ import { CallBuilder } from "./call_builder";
 import { Horizon } from "./horizon_api";
 import { ServerApi } from "./server_api";
 export declare class TradeAggregationCallBuilder extends CallBuilder<ServerApi.CollectionPage<TradeAggregationRecord>> {
+    constructor(serverUrl: uri.URI, base: Asset, counter: Asset, start_time: number, end_time: number, resolution: number, offset: number);
     private isValidResolution;
     private isValidOffset;
-    constructor(serverUrl: uri.URI, base: Asset, counter: Asset, start_time: number, end_time: number, resolution: number, offset: number);
 }
 interface TradeAggregationRecord extends Horizon.BaseResponse {
     timestamp: number | string;

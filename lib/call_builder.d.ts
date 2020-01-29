@@ -9,8 +9,15 @@ export interface EventSourceOptions<T> {
 }
 export declare class CallBuilder<T extends Horizon.FeeStatsResponse | Horizon.BaseResponse | ServerApi.CollectionPage<Horizon.BaseResponse>> {
     protected url: uri.URI;
-    public filter: string[][];
+    filter: string[][];
     protected originalSegments: string[];
+    constructor(serverUrl: uri.URI);
+    call(): Promise<T>;
+    stream(options?: EventSourceOptions<T>): () => void;
+    cursor(cursor: string): this;
+    limit(recordsNumber: number): this;
+    order(direction: "asc" | "desc"): this;
+    join(include: "transactions"): this;
     private checkFilter;
     private _requestFnForLink;
     private _parseRecord;
@@ -18,11 +25,4 @@ export declare class CallBuilder<T extends Horizon.FeeStatsResponse | Horizon.Ba
     private _parseResponse;
     private _toCollectionPage;
     private _handleNetworkError;
-    constructor(serverUrl: uri.URI);
-    public call(): Promise<T>;
-    public stream(options?: EventSourceOptions<T>): () => void;
-    public cursor(cursor: string): this;
-    public limit(recordsNumber: number): this;
-    public order(direction: "asc" | "desc"): this;
-    public join(include: "transactions"): this;
 }
