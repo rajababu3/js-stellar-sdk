@@ -15,27 +15,8 @@
     "postversion": "git push && git push --tags",
     "prettier-all": "prettier --write **/*.{js,ts}"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "prettier": "@stellar/prettier-config",
-  "lint-staged": {
-    "lib/*.{js,json}": [
-      "prettier --write",
-      "git add"
-    ],
-    "lib/*.js": [
-      "eslint --fix --max-warnings 0",
-      "git add"
-    ],
-    "**/*.ts": [
-      "prettier --write",
-      "tslint --fix",
-      "git add"
-    ]
-  },
+
   "keywords": [
     "stellar"
   ],
@@ -133,7 +114,7 @@
     "eventsource": "^1.0.7",
     "lodash": "^4.17.11",
     "randombytes": "^2.1.0",
-    "stellar-base": "rajababu3/js-stellar-base#master",
+    "stellar-base": "^2.1.4",
     "toml": "^2.3.0",
     "tslib": "^1.10.0",
     "urijs": "^1.19.1",
